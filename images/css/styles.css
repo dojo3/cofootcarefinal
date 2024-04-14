@@ -95,7 +95,36 @@
    */
 	--font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace;
 }
-
+.s-header__block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .s-header__content {
+	display: flex;
+	align-items: center;
+  }
+  
+  .s-header__logo {
+	width: 10px; /* Adjust the width as needed */
+	margin-right: 20px; /* Add some spacing between the logo and the "About" link */
+  }
+  
+  .s-header__nav {
+	display: flex;
+  }
+  
+  .s-header__menu-links {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .s-header__menu-links li {
+	margin-right: 10px; /* Add spacing between the menu links */
+  }
 /* ------------------------------------------------------------------- 
  * ## colors
  * ------------------------------------------------------------------- */
