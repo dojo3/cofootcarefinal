@@ -2989,7 +2989,7 @@ td:last-child {
 	display      : inline-block;
 	min-height   : var(--vspace-2);
 	margin-bottom: var(--vspace-0_625);
-	padding-left : calc(2.25 * var(--space));
+	padding-left : 0;
 	position     : relative;
 }
 
@@ -3080,6 +3080,30 @@ td:last-child {
 	.show-ctr .list-items__item-header::before {
 		font-size   : 0.9em;
 		margin-right: var(--vspace-0_125);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.testimonials__slider {
+		padding-bottom: var(--vspace-1_5);
+	}
+
+	.testimonials__slide {
+		padding: 0 var(--gutter);
+	}
+
+	.testimonials__author {
+		margin-bottom: var(--vspace-0_375);
+	}
+
+	.grid-list-items {
+		--min-width: 280px;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.grid-list-items {
+		--min-width: 100%;
 	}
 }
 
