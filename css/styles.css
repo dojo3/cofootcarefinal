@@ -3055,21 +3055,30 @@ td:last-child {
 }
 
 @media screen and (max-width: 600px) {
-	.testimonials__slider {
-		padding-bottom: var(--vspace-1_5);
-	}
+        .testimonials__slider {
+                padding-bottom: var(--vspace-1_5);
+        }
 
-	.testimonials__slide {
-		padding: 0 var(--gutter);
-	}
+        .testimonials__slide {
+                padding: 0 var(--gutter);
+        }
 
-	.testimonials__author {
-		margin-bottom: var(--vspace-0_375);
-	}
+        .testimonials__author {
+                margin-bottom: var(--vspace-0_375);
+        }
 
-	.grid-list-items {
-		--min-width: 280px;
-	}
+        .grid-list-items {
+                --min-width: 280px;
+        }
+
+        .button-group .btn {
+                display    : block;
+                width      : 100%;
+                height     : auto;
+                line-height: 1.4;
+                white-space: normal;
+                padding    : var(--vspace-0_25) calc(var(--gutter) * 1.5);
+        }
 }
 
 @media screen and (max-width: 460px) {
