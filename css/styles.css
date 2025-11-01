@@ -3762,29 +3762,27 @@ td:last-child {
 }
 
 .s-intro__scroll-down a {
-        display          : inline-flex;
-        align-items      : center;
-        gap              : var(--vspace-0_5);
-        padding          : 0.95rem 1.75rem;
-        border-radius    : 999px;
-        background-color : var(--color-btn-primary);
-        color            : var(--color-btn-primary-text);
-        font-family      : var(--font-1);
-        font-size        : var(--text-sm);
-        font-weight      : 600;
-        line-height      : 1.2;
-        text-decoration  : none;
-        box-shadow       : 0 12px 28px rgba(0, 0, 0, 0.14);
-        letter-spacing   : 0.01em;
-        transition       : background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        display            : inline-flex;
+        align-items        : center;
+        gap                : var(--vspace-0_5);
+        padding            : 0.85rem 1.85rem;
+        border-radius      : 999px;
+        background-color   : var(--color-1);
+        color              : var(--color-2-dark);
+        font-family        : var(--font-1);
+        font-size          : var(--text-size);
+        font-weight        : 500;
+        line-height        : 1.3;
+        text-decoration    : none;
+        box-shadow         : 0 15px 30px rgba(0, 0, 0, 0.13);
+        transition         : transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .s-intro__scroll-down a:hover,
 .s-intro__scroll-down a:focus {
-        background-color: var(--color-btn-primary-hover);
-        color           : var(--color-btn-primary-hover-text);
+        background-color: var(--color-1-light);
         transform       : translateY(2px);
-        box-shadow      : 0 10px 20px rgba(0, 0, 0, 0.18);
+        box-shadow      : 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 .s-intro__scroll-down a:focus {
@@ -3792,39 +3790,31 @@ td:last-child {
         outline-offset: 4px;
 }
 
-.s-intro__scroll-down .call-link__icon {
-        display        : inline-flex;
-        align-items    : center;
+.s-intro__scroll-down span {
+        display    : inline-flex;
+        align-items: center;
+        gap        : var(--vspace-0_25);
+}
+
+.s-intro__scroll-down span strong {
+        font-weight: 600;
+}
+
+.s-intro__scroll-down .scroll-icon {
+        display        : flex;
         justify-content: center;
+        align-items    : center;
         height         : var(--vspace-1_25);
         width          : var(--vspace-1_25);
         border-radius  : 50%;
-        background     : rgba(255, 255, 255, 0.18);
-        color          : currentColor;
+        border         : 2px solid var(--color-2-dark);
+        background     : rgba(255, 255, 255, 0.2);
 }
 
-.s-intro__scroll-down .call-link__icon svg {
-        width : var(--vspace-0_75);
+.s-intro__scroll-down svg {
         height: var(--vspace-0_75);
-}
-
-.s-intro__scroll-down .call-link__text {
-        display       : flex;
-        flex-direction: column;
-        align-items   : flex-start;
-        line-height   : 1.2;
-        gap           : 0.15rem;
-}
-
-.s-intro__scroll-down .call-link__label {
-        font-size     : var(--text-xs);
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-}
-
-.s-intro__scroll-down .call-link__number {
-        font-size  : var(--text-size);
-        font-weight: 700;
+        width : var(--vspace-0_75);
+        stroke: var(--color-2-dark);
 }
 
 /* --------------------------------------------------------------------
@@ -4053,12 +4043,11 @@ td:last-child {
         .s-intro__scroll-down a {
                 width          : 100%;
                 justify-content: center;
-                padding        : 0.9rem 1.5rem;
+                padding        : 0.85rem 1.5rem;
         }
 
-        .s-intro__scroll-down .call-link__text {
-                align-items: center;
-                text-align : center;
+        .s-intro__scroll-down span {
+                justify-content: center;
         }
 }
 
@@ -4075,7 +4064,8 @@ td:last-child {
                 margin-left: 0;
         }
 
-        .s-intro__scroll-down .call-link__number {
+        .s-intro__scroll-down span {
+                display: inline-flex;
                 font-size: var(--text-sm);
         }
 }
