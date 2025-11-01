@@ -3756,9 +3756,9 @@ td:last-child {
  * ## intro scroll down
  * -------------------------------------------------------------------- */
 .s-intro__scroll-down {
-	z-index    : 2;
-	grid-column: 1/10;
-	grid-row   : 2;
+        z-index    : 2;
+        grid-column: 1/10;
+        grid-row   : 2;
 }
 
 .s-intro__scroll-down a {
@@ -3980,9 +3980,9 @@ td:last-child {
 }
 
 @media screen and (max-width: 800px) {
-	.s-intro__scroll-down span {
-		font-size: var(--text-sm);
-	}
+        .s-intro__scroll-down .call-link__number {
+                font-size: var(--text-sm);
+        }
 }
 
 @media screen and (max-width: 600px) {
