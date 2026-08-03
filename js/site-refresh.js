@@ -46,4 +46,12 @@
     }, { threshold: 0.1 });
     callObserver.observe(pageIntro);
   }
+
+  const reviewTrack = document.querySelector('.review-track');
+  document.querySelectorAll('[data-review-direction]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const direction = Number(button.dataset.reviewDirection);
+      reviewTrack?.scrollBy({ left: direction * reviewTrack.clientWidth * 0.85, behavior: 'smooth' });
+    });
+  });
 })();
