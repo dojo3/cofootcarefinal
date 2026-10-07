@@ -5,6 +5,7 @@
   if (toggle && nav) {
     const closeMenu = () => {
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
       nav.classList.remove('open');
       document.body.classList.remove('nav-open');
       const label = toggle.querySelector('.sr-only');
@@ -13,6 +14,7 @@
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
       nav.classList.toggle('open', !open);
       document.body.classList.toggle('nav-open', !open);
       const label = toggle.querySelector('.sr-only');

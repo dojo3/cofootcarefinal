@@ -15,7 +15,7 @@ from lxml import html, etree
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://coloradofootcarenurse.com/'
 TODAY = '2026-10-07'
-VERSION = '20261007-design'
+VERSION = '20261007-polish'
 PRIMARY = ['index.html','services.html','about.html','articles.html','service-areas.html','contact.html']
 LABELS = {'index.html':'Home','services.html':'Services & pricing','about.html':'About Kirsten','articles.html':'Articles','service-areas.html':'Service areas','contact.html':'Contact','404.html':'Page not found'}
 META = {
@@ -40,7 +40,7 @@ def header(path):
  for target,label in items:
   current='aria-current="page" ' if target==active else ''
   links+=f'<a {current}href="{p+target}">{esc(label)}</a>'
- return f'''<header class="site-header"><div class="shell header-inner"><a class="brand" href="{p}index.html" aria-label="Colorado Foot Care Nurse home"><span class="brand-mark" aria-hidden="true">KA</span><span><strong>Kirsten Antony, RN</strong><small>Colorado Foot Care Nurse</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">{links}<a class="button button-small" href="tel:+13036688992">Call (303) 668-8992</a></nav></div></header>'''
+ return f'''<header class="site-header"><div class="shell header-inner"><a class="brand" href="{p}index.html" aria-label="Colorado Foot Care Nurse home"><span class="brand-mark" aria-hidden="true">KA</span><span><strong>Kirsten Antony, RN</strong><small>Colorado Foot Care Nurse</small></span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">{links}<a class="button button-small" href="tel:+13036688992">Call (303) 668-8992</a></nav></div></header>'''
 def footer(path):
  p=prefix(path)
  return f'''<footer class="site-footer"><div class="shell footer-grid"><div><a class="brand footer-brand" href="{p}index.html"><span class="brand-mark" aria-hidden="true">KA</span><span><strong>Kirsten Antony, RN</strong><small>Colorado Foot Care Nurse</small></span></a><p>Gentle foot and nail care, brought to your door. Serving Highlands Ranch and the Denver metro since 2001.</p></div><div><h2>Explore</h2><a href="{p}services.html">Services &amp; pricing</a><a href="{p}service-areas.html">Cities &amp; service areas</a><a href="{p}about.html">Meet Kirsten</a><a href="{p}articles.html">The article collection</a><a href="{p}contact.html">Arrange a visit</a></div><div><h2>Let’s talk</h2><a href="tel:+13036688992">(303) 668-8992</a><a href="mailto:kalacolorado@gmail.com">kalacolorado@gmail.com</a><span>Monday–Friday · 9am–5pm</span></div></div><div class="shell footer-bottom"><span>© <span data-year>2026</span> Kirsten Antony, RN</span><span>Serving private homes, families &amp; senior communities.</span></div></footer>'''
