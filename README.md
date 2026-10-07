@@ -14,7 +14,7 @@ python scripts/build_site.py
 python tests/validate_site.py
 ```
 
-`scripts/build_articles.py` generates the article collection and 41 reading pages. `scripts/build_site.py` then applies shared navigation, footer, canonical URLs, author/business/breadcrumb structured data, share metadata and the sitemap. It also maintains redirects from the old template and duplicate URLs. Commit the generated HTML along with its source changes. GitHub Pages serves these files directly; no JavaScript framework or build service is required by visitors.
+`scripts/build_articles.py` generates the article collection and 42 reading pages. `scripts/build_site.py` then applies shared navigation, footer, canonical URLs, author/business/breadcrumb structured data, share metadata and the sitemap. It also maintains redirects from the old template and duplicate URLs. Commit the generated HTML along with its source changes. GitHub Pages serves these files directly; no JavaScript framework or build service is required by visitors.
 
 Styles are in `css/site-refresh.css`, `css/articles.css` and `css/refinements.css`. Font loading is declared in the shared document head. Increment the asset version in `scripts/build_site.py` when changing CSS or JavaScript.
 

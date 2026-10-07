@@ -9,7 +9,10 @@ from lxml import html, etree
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://coloradofootcarenurse.com/'
 articles=json.loads((ROOT/'data/articles.json').read_text())
-assert len(articles)==41
+assert len(articles)==42
+audit=json.loads((ROOT/'data/clipping-audit.json').read_text())
+assert len(audit['photos'])==29
+assert all(any(a['slug']+'.html'==Path(p['path']).name for a in articles) for p in audit['photos'])
 paths=['index.html','about.html','services.html','contact.html','service-areas.html','articles.html']+['articles/'+a['slug']+'.html' for a in articles]
 titles=set();descriptions=set();canonical=set()
 for path in paths:
@@ -68,4 +71,4 @@ for path in legacy:
 sitemap=etree.parse(str(ROOT/'sitemap.xml'))
 assert set(sitemap.xpath('//*[local-name()="loc"]/text()'))==canonical
 assert 'Sitemap: '+BASE+'sitemap.xml' in (ROOT/'robots.txt').read_text()
-print(f'PASS: {len(paths)} indexable pages; 41 complete articles; exact prices; valid metadata, sitemap, links and image dimensions; {len(legacy)} legacy redirects.')
+print(f'PASS: {len(paths)} indexable pages; {len(articles)} complete articles; exact prices; valid metadata, sitemap, links and image dimensions; {len(legacy)} legacy redirects.')
