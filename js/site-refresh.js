@@ -1,7 +1,15 @@
 (() => {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#primary-nav');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (toggle && nav) {
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      const label = toggle.querySelector('.sr-only');
+      if (label) label.textContent = 'Open menu';
+    };
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
@@ -10,19 +18,26 @@
       const label = toggle.querySelector('.sr-only');
       if (label) label.textContent = open ? 'Open menu' : 'Close menu';
     });
-    nav.addEventListener('click', () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('open');
-      document.body.classList.remove('nav-open');
-      const label = toggle.querySelector('.sr-only');
-      if (label) label.textContent = 'Open menu';
-    });
+    nav.addEventListener('click', closeMenu);
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && nav.classList.contains('open')) {
-        toggle.click();
+        closeMenu();
         toggle.focus();
       }
+      if (event.key === 'Tab' && nav.classList.contains('open')) {
+        const links = [...nav.querySelectorAll('a[href]')];
+        const last = links[links.length - 1];
+        if (event.shiftKey && document.activeElement === toggle) {
+          event.preventDefault(); last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); toggle.focus();
+        }
+      }
     });
+    document.addEventListener('click', event => {
+      if (!event.target.closest('.site-header')) closeMenu();
+    });
+    window.matchMedia('(max-width: 960px)').addEventListener('change', closeMenu);
   }
   document.querySelectorAll('[data-year]').forEach((item) => {
     item.textContent = new Date().getFullYear();
@@ -51,7 +66,7 @@
   document.querySelectorAll('[data-review-direction]').forEach((button) => {
     button.addEventListener('click', () => {
       const direction = Number(button.dataset.reviewDirection);
-      reviewTrack?.scrollBy({ left: direction * reviewTrack.clientWidth * 0.85, behavior: 'smooth' });
+      reviewTrack?.scrollBy({ left: direction * reviewTrack.clientWidth * 0.85, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     });
   });
 })();
