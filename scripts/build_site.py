@@ -19,7 +19,7 @@ VERSION = '20261007-polish'
 PRIMARY = ['index.html','services.html','about.html','articles.html','service-areas.html','contact.html']
 LABELS = {'index.html':'Home','services.html':'Services & pricing','about.html':'About Kirsten','articles.html':'Articles','service-areas.html':'Service areas','contact.html':'Contact','404.html':'Page not found'}
 META = {
- 'index.html':('Mobile Foot Care in Denver & Highlands Ranch | Kirsten Antony, RN','Gentle in-home foot and toenail care from Kirsten Antony, RN. Serving Denver, Highlands Ranch and nearby communities. Visits start at $90.'),
+ 'index.html':('Mobile Foot Care in Denver & Highlands Ranch | Kirsten Antony, RN','Professional medical foot care services provided by Kirsten Antony, RN. Serving Denver, Highlands Ranch and nearby communities. Visits start at $90.'),
  'services.html':('Mobile Foot Care Services & Prices | Kirsten Antony, RN','See in-home foot care prices by city: Highlands Ranch from $90, Denver and Aurora $100, Golden and Arvada $110, Broomfield $115. Couples discounts available.'),
  'about.html':('About Kirsten Antony, RN | Mobile Foot Care Since 2001','Meet Kirsten Antony, a Colorado registered nurse providing mobile foot care since 2001, with experience in long-term care, wound care and holistic wellness.'),
  'articles.html':('Foot Care & Wellness Articles by Kirsten Antony, RN',f'Read {len(json.loads((ROOT / "data/articles.json").read_text()))} complete articles by Kirsten Antony, RN. Explore foot care, mindfulness, healthy aging, nature and the healing arts, with search and topic filters.'),
